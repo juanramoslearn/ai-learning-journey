@@ -43,3 +43,15 @@ distancias, indices = indice.search(embedding_consulta, k=2)
 print(f'\nConsulta: "{consulta}"')
 for i, idx in enumerate(indices[0]):
     print(f'{distancias[0][i]:.4f} -> {documentos[idx]}')
+
+# Guardar índice
+faiss.write_index(indice, 'indice.faiss')
+print('Índice guardado')
+
+# Cargar y usar sin reconstruir
+indice_cargado = faiss.read_index('indice.faiss')
+distancias2, indices2 = indice_cargado.search(embedding_consulta, k=2)
+
+print('\nDesde índice cargado')
+for i, idx in enumerate(indices2[0]):
+    print(f'{distancias2[0][i]:.4f} -> {documentos[idx]}')
