@@ -58,6 +58,16 @@ client = crear_cliente()
 # resultado = llamar_modelo(client, conversacion, modelo='modelo inventado')
 # print(f'Resultado con error: {resultado}')
 
-# Probar modelo stream
-conversacion = [{'role':'user','content':'Explícame qué es el streaming en APIs en 3 líneas'}]
-llamar_modelo_stream(client, conversacion)
+# # Probar modelo stream
+# conversacion = [{'role':'user','content':'Explícame qué es el streaming en APIs en 3 líneas'}]
+# llamar_modelo_stream(client, conversacion)
+
+# Probar diferentes modelos
+conversacion=[{'role':'user','content':'En una línea, ¿qué es un transformer?'}]
+modelos = [
+    'gpt-4o-mini', "meta/Meta-Llama-3.1-8B-Instruct", "mistral-ai/mistral-small-2503"
+]
+
+for modelo in modelos:
+    print(f'\nModelo: {modelo}:')
+    print(llamar_modelo(client, conversacion, modelo=modelo))
