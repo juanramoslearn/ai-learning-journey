@@ -7,5 +7,5 @@
       ]
     }
   },
-  "postCreateCommand": "pip install openai faiss-cpu numpy ipykernel notebook"
+  "postCreateCommand": "pip install -r requirements.txt"
 }
