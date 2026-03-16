@@ -1,10 +1,11 @@
 {
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-python.python",
-                "ms-toolsai.jupyter"
-            ]
-        }
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
     }
+  },
+  "postCreateCommand": "pip install openai faiss-cpu numpy ipykernel notebook"
 }
